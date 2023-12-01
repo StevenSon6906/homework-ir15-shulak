@@ -1,12 +1,16 @@
+#pylint: disable = R0913
+"""Module providing a function creating a collection of name/values pairs """
 from enum import Enum
 BILLION = 1000000000
 
 class GovernmentType(Enum):
-    DEMOCRATION = 1
+    """Class representing a government type"""
+    DEMOCRACY = 1
     REPUBLIC  = 2
-    AVTOTERORUZM = 3
+    AOTOSHITISM = 3
 
 class Country:
+    """Creats a Country object"""
     def __init__(self, name, capital, code, population, area, gdp, government_type):
         '''
             initializating attibutes
@@ -19,22 +23,41 @@ class Country:
         self.__gdp = gdp
         self.__government_type = government_type
 
-    '''
-        getters from instance
-    '''
+
     def get_name(self):
+        '''
+            returns a country's name
+        '''
         return self.__name
     def get_capital(self):
+        '''
+            returns a country's capital 
+        '''
         return self.__capital
     def get_code(self):
+        '''
+            returns a country's code
+        '''
         return self.__code
     def get_population(self):
+        '''
+            returns a country's population  
+        '''
         return self.__population
     def get_area(self):
+        '''
+            returns a country's area
+        '''
         return self.__area
     def get_gdp(self):
+        '''
+            returns a country's gdp 
+        '''
         return self.__gdp
     def get_government_type(self):
+        '''
+            returns a government type of country  
+        '''
         return self.__government_type
     def __str__(self):
         '''
@@ -48,22 +71,29 @@ class Country:
 
 
 class Land:
+    """Creats a Land object"""
     def __init__(self, name):
         '''
             initializating attibutes
         '''
         self.__name = name
         self.__countries = []
-    '''
-        getters from instance
-    '''
+
     def get_name(self):
+        '''
+            returns land's name 
+        '''
         return self.__name
-    
     def get_countries(self):
+        '''
+            returns a list of countries 
+        '''
         return self.__countries
 
     def add_country(self, country):
+        '''
+            append list with selected countries
+        '''
         self.__countries.append(country)
 
     def calculate_population_density(self):
