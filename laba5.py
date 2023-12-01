@@ -2,9 +2,9 @@ from enum import Enum
 BILLION = 1000000000
 
 class GovernmentType(Enum):
-    Демократія = 1
-    Республіка  = 2
-    Авторитаризм = 3
+    DEMOCRATION = 1
+    REPUBLIC  = 2
+    AVTOTERORUZM = 3
 
 class Country:
     def __init__(self, name, capital, code, population, area, GDP, government_type):
