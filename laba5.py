@@ -7,7 +7,7 @@ class GovernmentType(Enum):
     AVTOTERORUZM = 3
 
 class Country:
-    def __init__(self, name, capital, code, population, area, GDP, government_type):
+    def __init__(self, name, capital, code, population, area, gdp, government_type):
         '''
             initializating attibutes
         '''
@@ -16,7 +16,7 @@ class Country:
         self.__code = code
         self.__population = population
         self.__area = area
-        self.__GDP = GDP
+        self.__gdp = gdp
         self.__government_type = government_type
 
     '''
@@ -32,8 +32,8 @@ class Country:
         return self.__population
     def get_area(self):
         return self.__area
-    def get_GDP(self):
-        return self.__GDP
+    def get_gdp(self):
+        return self.__gdp
     def get_government_type(self):
         return self.__government_type
     def __str__(self):
@@ -43,7 +43,7 @@ class Country:
         return (
             f"{self.__name} ({self.__capital}), Код: {self.__code}, "
             f"Населення: {self.__population}, Площа: {self.__area} m^2, "
-            f"ВВП: {self.__GDP} тріліона, Тип уряду: {self.__government_type.name}"
+            f"ВВП: {self.__gdp} тріліона, Тип уряду: {self.__government_type.name}"
         )
 
 
@@ -78,9 +78,9 @@ class Land:
 
     def sort_countries_by_gdp(self):
         '''
-            this fnc sorts countries by their GDP
+            this fnc sorts countries by their gdp
         '''
-        return sorted(self.__countries, key=lambda x: x.get_GDP(), reverse=True)
+        return sorted(self.__countries, key=lambda x: x.get_gdp(), reverse=True)
 
     def select_country_by_population(self):
         '''
@@ -112,7 +112,7 @@ class Land:
         print("\n\033[1;3m Топ країн за ВВП:\033[0m")
         top_countries = self.sort_countries_by_gdp()
         for x, country in enumerate(top_countries):
-            print(f"{x + 1}. {country.get_name()} ({country.get_GDP()})")
+            print(f"{x + 1}. {country.get_name()} ({country.get_gdp()})")
 
     def print_countries_by_population(self):
         '''
